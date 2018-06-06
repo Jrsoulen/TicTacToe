@@ -13,15 +13,15 @@ tic = [
 
 function change( el )
 	{
-	winner();
 	if ( el.value === "" )
 		el.value = Turn;
 		if (Turn === "X")
 			Turn = "O"
 		else
 			Turn = "X"
-	document.getElementById('ShowTurn').innerHTML=Turn
+	document.getElementById('ShowTurn').innerHTML=Turn;
 	document.getElementById("demo").innerHTML = tic.join(", ");
+	winner();
 	}
 
 function set(location)
@@ -32,8 +32,22 @@ function set(location)
 
 function winner()
 	{
-	if ( tic[0] === tic[1] && tic[1] === tic[2] && tic[2] === "X" )
-		document.getElementById('ShowTurn').innerHTML="GAME OVER. The winner is... X!";
+	if ( tic[0] !== " " && tic[0] === tic[1] && tic[1] === tic[2] )
+		document.getElementById('ShowTurn').innerHTML="GAME OVER. The winner is... " + tic[0];
+	if ( tic[3] !== " " && tic[3] === tic[4] && tic[4] === tic[5] )
+		document.getElementById('ShowTurn').innerHTML="GAME OVER. The winner is... " + tic[3];
+	if ( tic[6] !== " " && tic[6] === tic[7] && tic[7] === tic[8] )
+		document.getElementById('ShowTurn').innerHTML="GAME OVER. The winner is... " + tic[6];
+	if ( tic[0] !== " " && tic[0] === tic[3] && tic[3] === tic[6] )
+		document.getElementById('ShowTurn').innerHTML="GAME OVER. The winner is... " + tic[0];
+	if ( tic[1] !== " " && tic[1] === tic[4] && tic[4] === tic[7] )
+		document.getElementById('ShowTurn').innerHTML="GAME OVER. The winner is... " + tic[1];
+	if ( tic[2] !== " " && tic[2] === tic[5] && tic[5] === tic[8] )
+		document.getElementById('ShowTurn').innerHTML="GAME OVER. The winner is... " + tic[2];
+	if ( tic[0] !== " " && tic[0] === tic[4] && tic[4] === tic[8] )
+		document.getElementById('ShowTurn').innerHTML="GAME OVER. The winner is... " + tic[0];
+	if ( tic[2] !== " " && tic[2] === tic[4] && tic[4] === tic[6] )
+		document.getElementById('ShowTurn').innerHTML="GAME OVER. The winner is... " + tic[2];
 	}
 </script>
 
@@ -90,8 +104,8 @@ Turn sets X or O and change sets the turns-->
 		</div>
     </div>
     <div class="button">
-        <button>New Game</button>
-        <button>End Game</button>
+        <button onclick="location.reload();">New Game</button>
+        <button>Watch the computers go!</button>
     </div>
 </div>
 
