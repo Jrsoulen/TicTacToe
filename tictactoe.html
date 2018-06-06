@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<link href="style.css" rel="stylesheet" type="text/css">
+
+<h2>My Second JavaScript</h2>
+<h3>This is Tic-Tac-Toe</h3>
+
+<p id ="end"> <p>
+<input type="button" value="Reset Board" onclick="document.getElementById('end').innerHTML = 'Game Over!'" />
+
+<div id="flex-container">
+	<div class=flex-item">
+		<img src="blank.png" alt="blank">
+	</div>
+	<div class=flex-item">
+		<img src="blank.png" alt="blank">
+	</div>
+	<div class=flex-item">
+		<img src="blank.png" alt="blank">
+	</div>
+</div>
+
+<div id="flex-container">
+	<div class=flex-item">
+		<img src="blank.png" alt="blank">
+	</div>
+	<div class=flex-item">
+		<img src="blank.png" alt="blank">
+	</div>
+	<div class=flex-item">
+		<img src="blank.png" alt="blank">
+	</div>
+</div>
+
+<div id="flex-container">
+	<div class=flex-item">
+		<img src="blank.png" alt="blank">
+	</div>
+	<div class=flex-item">
+		<img src="blank.png" alt="blank">
+	</div>
+	<div class=flex-item">
+		<img src="blank.png" alt="blank">
+	</div>
+</div>
+
+
+
+
+<script type="text/javascript">
+var Turn = "X"
+
+var tic = [
+		"X"," "," ",
+		" "," "," ",
+        " "," "," "
+        ];
+
+function change( el )
+	{
+	if ( el.value === "" )
+		el.value = Turn;
+		if (Turn === "X")
+			Turn = "O"
+		else
+			Turn = "X"
+	}
+
+function checker( x, y )
+	{
+	
+</script>
+
+
+</body>
+</html>
+
+<!--<table>
+	<tr>
+		<td width="35px"><input type="button" value="" onclick="return change(this);" /></td>
+		<td width="35px"><input type="button" value="" onclick="return change(this);" /></td>
+		<td width="35px"><input type="button" value="" onclick="return change(this);" /></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="" onclick="return change(this);" /></td>
+		<td><input type="button" value="" onclick="return change(this);" /></td>
+		<td><input type="button" value="" onclick="return change(this);" /></td>
+	</tr>
+	<tr>
+		<td><input type="button" value="" onclick="return change(this);" /></td>
+		<td><input type="button" value="" onclick="return change(this);" /></td>
+		<td><input type="button" value="" onclick="return change(this);" /></td>
+	</tr>-->
