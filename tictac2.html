@@ -13,6 +13,7 @@ tic = [
 
 function change( el )
 	{
+	winner();
 	if ( el.value === "" )
 		el.value = Turn;
 		if (Turn === "X")
@@ -23,49 +24,16 @@ function change( el )
 	document.getElementById("demo").innerHTML = tic.join(", ");
 	}
 
-function set0()
+function set(location)
 	{
-	tic[0]=Turn;
+	console.log('Set location ' + location + ' to ' + Turn);
+	tic[location]=Turn;
 	}
 
-function set1()
+function winner()
 	{
-	tic[1]=Turn;
-	}
-
-function set2()
-	{
-	tic[2]=Turn
-	}
-	
-function set3()
-	{
-	tic[3]=Turn
-	}
-	
-function set4()
-	{
-	tic[4]=Turn
-	}
-	
-function set5()
-	{
-	tic[5]=Turn
-	}
-	
-function set6()
-	{
-	tic[6]=Turn
-	}
-	
-function set7()
-	{
-	tic[7]=Turn
-	}
-	
-function set8()
-	{
-	tic[8]=Turn
+	if ( tic[0] === tic[1] && tic[1] === tic[2] && tic[2] === "X" )
+		document.getElementById('ShowTurn').innerHTML="GAME OVER. The winner is... X!";
 	}
 </script>
 
@@ -77,48 +45,47 @@ function set8()
 Turn sets X or O and change sets the turns-->
 <div class="wrapper">
     <div class="gameboard">
-        <div onclick=
-			"document.getElementById('box0').innerHTML=Turn; return change(this)";>
+        <div onclick="document.getElementById('box0').innerHTML=Turn; set(0); change(this)";>
 			<p id="box0"> <p>
 		</div>
         <div class="leftright" onclick="document.getElementById('box1').innerHTML=Turn;
-			return set1(); 
-			return change(this);">
+			set(1); 
+			change(this);">
 			<p id="box1"> <p>
 		</div>
         <div onclick="document.getElementById('box2').innerHTML=Turn;
-			return set2();
-			return change(this);">
+			set(2);
+			change(this);">
 			<p id="box2"> </p>
 		</div>
         <div class="updown" onclick="document.getElementById('box3').innerHTML=Turn;
-			return set3();
-			return change(this);">
+			set(3);
+			change(this);">
 			<p id="box3"> </p>
 		</div>
         <div class="middle" onclick="document.getElementById('box4').innerHTML=Turn;
-			return set4();
-			return change(this);">
+			set(4);
+			change(this);">
 			<p id="box4"> </p>
 		</div>
         <div class="updown" onclick="document.getElementById('box5').innerHTML=Turn;
-			return set5();
-			return change(this);">
+			set(5);
+			change(this);">
 			<p id ="box5"> </p>
 		</div>
         <div onclick="document.getElementById('box6').innerHTML=Turn;
-			return set6();
-			return change(this);">
+			set(6);
+			change(this);">
 			<p id="box6"> </p>
 		</div>
         <div class="leftright" onclick="document.getElementById('box7').innerHTML=Turn;
-			return set7();
-			return change(this);">
+			set(7);
+			change(this);">
 			<p id="box7"> </p>
 		</div>
         <div onclick="document.getElementById('box8').innerHTML=Turn;
-			return set8();
-			return change(this);">
+			set(8);
+			change(this);">
 			<p id="box8"> </p>
 		</div>
     </div>
